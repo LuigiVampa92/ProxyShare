@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProxyShare</string>
+    <string name="hce_service_name">NFC NDEF share service</string>
+    <string name="hce_card_description">NFC_NDEF_SHARE</string>
+</resources>

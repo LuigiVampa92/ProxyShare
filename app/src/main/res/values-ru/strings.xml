@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_general_ok">OK</string>
+    <string name="text_general_error">Ошибка</string>
+    <string name="text_activity_error_hint">Это приложение не может работать на вашем устройстве</string>
+    <string name="text_banner_enable_nfc_button">Настройки</string>
+    <string name="text_banner_enable_nfc_description">Вам необходимо включить NFC в настройках вашего устройства</string>
+    <string name="text_button_ndef_push">Отправить</string>
+    <string name="text_intent_description">Сохранить MTProxy</string>
+    <string name="text_hint_dialog_add">Добавить MTProxy</string>
+    <string name="text_button_add">Добавить</string>
+    <string name="text_button_cancel">Отмена</string>
+    <string name="text_hint_host">Адрес</string>
+    <string name="text_hint_port">Порт</string>
+    <string name="text_hint_secret">Секрет</string>
+    <string name="text_error_invalid_value">Введённое значение некорректно</string>
+    <string name="text_no_records">Нет сохранённых прокси</string>
+</resources>

@@ -1,0 +1,63 @@
+ext.deps = [:]
+
+def versions = [:]
+versions.gradle_plugin = '3.6.3'
+versions.kotlin = '1.3.70'
+versions.androidx = '1.1.0'
+versions.design = '1.1.0'
+versions.recycler = '1.0.0'
+versions.constraint_layout = '1.1.3'
+versions.junit = '4.12'
+versions.espresso = '3.2.0'
+versions.test_runner = '1.2.0'
+versions.rxjava = '2.2.8'
+versions.rxandroid = '2.1.1'
+versions.room = '2.1.0'
+
+def deps = [:]
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.gradle_plugin"
+
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+kotlin.extension = "org.jetbrains.kotlin:kotlin-android-extensions:$versions.kotlin"
+deps.kotlin = kotlin
+
+def support = [:]
+support.appcompat = "androidx.appcompat:appcompat:$versions.androidx"
+support.design = "com.google.android.material:material:$versions.design"
+support.constraint = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
+support.recyclerview = "androidx.recyclerview:recyclerview:$versions.recycler"
+support.ktx = "androidx.core:core-ktx:$versions.androidx"
+deps.support = support
+
+def rx = [:]
+rx.java = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+rx.android = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+deps.rx = rx
+
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+room.rx = "androidx.room:room-rxjava2:$versions.room"
+deps.room = room
+
+def tests = [:]
+tests.junit = "junit:junit:$versions.junit"
+tests.runner = "androidx.test:runner:$versions.test_runner"
+tests.espresso = "androidx.test.espresso:espresso-core:$versions.espresso"
+deps.tests = tests
+
+def buildSdkVersions = [:]
+buildSdkVersions.min = 21
+buildSdkVersions.target = 29
+
+ext.buildSdkVersions = buildSdkVersions
+ext.deps = deps
+
+static def addRepositories(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+}
+
+ext.addRepositories = this.&addRepositories

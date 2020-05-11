@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_general_ok">OK</string>
+    <string name="text_general_error">Error</string>
+    <string name="text_activity_error_hint">Unfortunately this app can not work on your device</string>
+    <string name="text_banner_enable_nfc_button">Settings</string>
+    <string name="text_banner_enable_nfc_description">You need to enable NFC in your device settings in order to use this application</string>
+    <string name="text_button_ndef_push">Push</string>
+    <string name="text_intent_description">Save MTProxy</string>
+    <string name="text_hint_dialog_add">Add MTProxy</string>
+    <string name="text_button_add">Add</string>
+    <string name="text_button_cancel">Cancel</string>
+    <string name="text_hint_host">Address</string>
+    <string name="text_hint_port">Port</string>
+    <string name="text_hint_secret">Shared secret</string>
+    <string name="text_error_invalid_value">Inserted value is invalid</string>
+    <string name="text_no_records">No proxies saved</string>
+</resources>

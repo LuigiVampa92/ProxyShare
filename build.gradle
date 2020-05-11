@@ -1,0 +1,22 @@
+buildscript {
+    apply from: 'dependencies.gradle'
+    if (file('signing.gradle').exists()) {
+        apply from: 'signing.gradle'
+    }
+    else if (file('signing_example.gradle').exists()) {
+        apply from: 'signing_example.gradle'
+    }
+    addRepositories(repositories)
+    dependencies {
+        classpath deps.android_gradle_plugin
+        classpath deps.kotlin.plugin
+    }
+}
+
+allprojects {
+    addRepositories(repositories)
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

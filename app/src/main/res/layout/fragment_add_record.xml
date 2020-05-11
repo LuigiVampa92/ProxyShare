@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+            android:id="@+id/text_hint_host"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_alignParentTop="true"
+            android:textSize="14dp"
+            android:text="@string/text_hint_dialog_add"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_host"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@+id/text_hint_host"
+            android:hint="@string/text_hint_host">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_host"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:singleLine="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@+id/input_layout_host"
+            android:hint="@string/text_hint_port">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_port"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:singleLine="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_secret"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@+id/input_layout_port"
+            android:hint="@string/text_hint_secret">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_secret"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:singleLine="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/input_layout_secret"
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/text_button_add"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/button_add"
+            android:layout_below="@+id/input_layout_secret"
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/text_button_cancel"/>
+
+</RelativeLayout>

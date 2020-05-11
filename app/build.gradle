@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+def appVersionCode = 1
+def appVersionName = "1.0"
+
+android {
+    compileSdkVersion buildSdkVersions.target
+    defaultConfig {
+        applicationId "com.luigivampa92.nfcshare"
+        minSdkVersion buildSdkVersions.min
+        targetSdkVersion buildSdkVersions.target
+        versionCode appVersionCode
+        versionName appVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "LOG_TAG", "\"SHARE_NFC_NDEF_DEBUG\""
+    }
+    bundle {
+        density {
+            enableSplit false
+        }
+        abi {
+            enableSplit false
+        }
+        language {
+            enableSplit false
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file(project.signing.storeFile)
+            storePassword project.signing.storePassword
+            keyAlias project.signing.keyAlias
+            keyPassword project.signing.keyPassword
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField "Boolean", "LOGS_ENABLED", "true"
+            debuggable true
+            jniDebuggable true
+            renderscriptDebuggable true
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+        release {
+            buildConfigField "Boolean", "LOGS_ENABLED", "false"
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        encoding "UTF-8"
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def separator = "_"
+            def projectName = variant.applicationId
+            def buildType = variant.variantData.variantConfiguration.buildType.name
+            def versionName = variant.versionName
+            def datetime = new Date().format('ddMMyyyy_HHmm')
+            def apkName = projectName + separator + versionName + separator + buildType + separator + datetime + ".apk"
+            output.outputFileName = "${apkName}"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    implementation deps.kotlin.stdlib
+    implementation deps.support.appcompat
+    implementation deps.support.design
+    implementation deps.support.ktx
+    implementation deps.support.constraint
+    implementation deps.support.recyclerview
+    implementation deps.rx.java
+    implementation deps.rx.android
+    implementation deps.room.runtime
+    implementation deps.room.rx
+    kapt deps.room.compiler
+    testImplementation deps.tests.junit
+    androidTestImplementation deps.tests.runner
+    androidTestImplementation deps.tests.espresso
+}

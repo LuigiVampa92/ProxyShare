@@ -1,0 +1,21 @@
+// in order to sign your release builds from commandline:
+//
+// create and prepare .keystore file with RSA key in project root (can be created with keytool)
+// create file <signing.gradle> in project root directory
+// copy the example config from this file to <signing.gradle> and fill it with your actual values
+//
+// OR put your prepared .keystore file and your preconfigured <signing.gradle> in project root
+//
+// WARNING: make sure you put your values into <signing.gradle> file only in trusted environment
+// storePassword and keyPassword values MUST BE KEPT SECRET. Do not disclose those values anywhere!
+//
+// WARNING: this is an example file - do not modify it or insert actual values in the fields below
+// it may lead to troubles when updating project from VCS
+// and since this file is under VCS can accidentally push your secret values to remote repository
+
+ext.signing = [
+        storeFile     : 'EXAMPLE PATH TO YOUR .keystore FILE',
+        storePassword : 'EXAMPLE KEYSTORE PASSWORD',
+        keyAlias      : 'EXAMPLE SIGNING KEY ALIAS',
+        keyPassword   : 'EXAMPLE SIGNING KEY PASSWORD',
+]

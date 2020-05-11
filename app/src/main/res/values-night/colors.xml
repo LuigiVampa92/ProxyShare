@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorMain">#FFFFFF</color>
+    <color name="colorMainBackground">#000000</color>
+    <color name="colorRecordBackground">#222222</color>
+    <color name="colorNavigationBar">#222222</color>
+</resources>

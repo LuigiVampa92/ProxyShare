@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent">
+
+        <ImageView
+                android:id="@+id/img_icon_delete"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/ic_delete"
+                app:layout_constraintDimensionRatio="W, 1:1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="ContentDescription"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_foreground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRecordBackground"
+            android:foreground="?selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true">
+
+        <ImageView
+                android:id="@+id/img_check"
+                android:layout_width="@dimen/size_icon"
+                android:layout_height="@dimen/size_icon"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_check_ok"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="ContentDescription"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_push"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_icon"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/text_button_ndef_push"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/img_check"/>
+
+        <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_buttons"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:barrierDirection="start"
+                app:constraint_referenced_ids="img_check, button_push"/>
+
+        <TextView
+                android:id="@+id/text_record_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="viewStart"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@color/colorMain"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/barrier_buttons"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Title"/>
+
+        <TextView
+                android:id="@+id/text_record_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="viewStart"
+                android:singleLine="false"
+                android:maxLines="4"
+                android:textSize="12dp"
+                android:text="title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/barrier_buttons"
+                app:layout_constraintTop_toBottomOf="@+id/text_record_title"
+                tools:text="Description"/>
+
+        <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_bottom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="text_record_description, img_check, button_push"/>
+
+        <View
+                android:id="@+id/view_bottom_gap"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_bottom"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
