@@ -1,6 +1,9 @@
 # ProxyShare
 Android application that shares proxy settings of Telegram messenger app ([Android](https://play.google.com/store/apps/details?id=org.telegram.messenger), [iOS](https://apps.apple.com/app/telegram-messenger/id686449807)) via NFC. Works with both Android and iOS
 
+<a href="https://play.google.com/store/apps/details?id=com.luigivampa92.nfcshare"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Play Store" height="60"></a>
+<a href="https://github.com/LuigiVampa92/ProxyShare/releases/download/v1.0/com.luigivampa92.nfcshare_1.0_release_16052020_0754.apk"><img src="assets/badge_download_direct_apk.png" alt="Direct APK download" height="60"></a>
+
 ## What does it do?
 This app allows you to share MTProxy configurations of your Telegram messenger with a single touch.
 
